@@ -1,0 +1,23 @@
+{
+  "name": "on-idle",
+  "description": "Detect when the browser is idle",
+  "repository": "yoshuawuyts/on-idle",
+  "version": "1.0.0",
+  "scripts": {
+    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "start": "node .",
+    "test": "standard && npm run deps",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dependency-check": "^2.8.0",
+    "standard": "^9.0.2",
+    "tape": "^4.6.3"
+  },
+  "keywords": [
+    "browser",
+    "idle",
+    "requestIdleCallback"
+  ]
+}
