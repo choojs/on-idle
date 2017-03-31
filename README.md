@@ -15,9 +15,14 @@ onIdle(function () {
 })
 ```
 
+## Why?
+If you render from `requestIdleCallback()` the next frame needs to do a
+blocking recalc of the layout which is no good. This lib makes sure you don't
+run into issues, regardless of environment.
+
 ## API
 ### `onIdle(callback)`
-Call a function when the browser has spare time. Calls it immediately if
+Call a function when the browser has spare time. Calls it on the next frame if
 `window.requestIdleCallback` is not available. Does nothing in Node.
 
 ## License
