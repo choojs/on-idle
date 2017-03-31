@@ -15,6 +15,11 @@ onIdle(function () {
 })
 ```
 
+## API
+### `onIdle(callback)`
+Call a function when the browser has spare time. Calls it immediately if
+`window.requestIdleCallback` is not available. Does nothing in Node.
+
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
 
