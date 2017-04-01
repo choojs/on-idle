@@ -2,7 +2,7 @@
   "name": "on-idle",
   "description": "Detect when the browser is idle",
   "repository": "yoshuawuyts/on-idle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra --no-dev",
     "start": "node .",
