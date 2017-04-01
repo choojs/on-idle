@@ -9,6 +9,6 @@ function onIdle (cb) {
       window.requestAnimationFrame(cb)
     })
   } else {
-    window.requestAnimationFrame(cb)
+    typeof window !== 'undefined' && window.requestAnimationFrame(cb)
   }
 }
