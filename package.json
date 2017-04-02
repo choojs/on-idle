@@ -12,8 +12,8 @@
   "dependencies": {},
   "devDependencies": {
     "dependency-check": "^2.8.0",
-    "standard": "^9.0.2",
-    "tape": "^4.6.3"
+    "nyc": "^10.2.0",
+    "standard": "^9.0.2"
   },
   "keywords": [
     "browser",
