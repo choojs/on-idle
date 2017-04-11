@@ -21,7 +21,7 @@ blocking recalc of the layout which is no good. This lib makes sure you don't
 run into issues, regardless of environment.
 
 ## API
-### `onIdle(callback)`
+### `onIdle(callback, options)`
 Call a function when the browser has spare time. Calls it on the next frame if
 `window.requestIdleCallback` is not available. Does nothing in Node.
 

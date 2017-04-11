@@ -4,11 +4,11 @@ var hasIdleCallback = hasWindow &&
 
 module.exports = onIdle
 
-function onIdle (cb) {
+function onIdle (cb, options) {
   if (hasIdleCallback) {
     window.requestIdleCallback(function () {
       window.requestAnimationFrame(cb)
-    })
+    }, options)
   } else if (hasWindow) {
     window.requestAnimationFrame(cb)
   }
