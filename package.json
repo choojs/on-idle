@@ -5,12 +5,15 @@
   "version": "1.1.0",
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra --no-dev",
-    "start": "node .",
+    "start": "bankai start example.js",
     "test": "standard && npm run deps",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov"
   },
-  "dependencies": {},
+  "dependencies": {
+    "nanologger": "^1.1.0"
+  },
   "devDependencies": {
+    "bankai": "^7.6.2",
     "dependency-check": "^2.8.0",
     "nyc": "^10.2.0",
     "standard": "^9.0.2"

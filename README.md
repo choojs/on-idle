@@ -2,7 +2,10 @@
 [![npm version][2]][3] [![build status][4]][5]
 [![downloads][8]][9] [![js-standard-style][10]][11]
 
-Safely detect when the browser is idle. Does nothing when run in Node.
+Safely detect when the browser is idle. Does nothing when run in Node. Warns if
+an action takes more than 50ms.
+
+![on idle console screenshot](./screenshot.png)
 
 ## Usage
 ```js
@@ -14,11 +17,6 @@ onIdle(function () {
   document.body.appendChild(el)
 })
 ```
-
-## Why?
-If you render from `requestIdleCallback()` the next frame needs to do a
-blocking recalc of the layout which is no good. This lib makes sure you don't
-run into issues, regardless of environment.
 
 ## API
 ### `onIdle(callback, options)`
