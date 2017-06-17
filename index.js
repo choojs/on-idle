@@ -13,9 +13,7 @@ function onIdle (cb, opts) {
   assert.equal(typeof opts, 'object', 'on-idle: opts should be type object')
 
   if (hasIdle) {
-    window.requestIdleCallback(function () {
-      window.requestAnimationFrame(cb)
-    }, opts)
+    window.requestIdleCallback(cb, opts)
   } else if (hasWindow) {
     window.requestAnimationFrame(cb)
   }
