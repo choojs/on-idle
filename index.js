@@ -1,8 +1,6 @@
-var nanologger = require('nanologger')
 var assert = require('assert')
 
 var dftOpts = {}
-var log = nanologger('on-idle')
 var hasWindow = typeof window !== 'undefined'
 var perf = hasWindow && window.performance
 var hasPerf = hasWindow && perf.mark
@@ -33,14 +31,8 @@ function onIdle (cb, opts) {
     perf.mark(startName)
     cb()
     perf.mark(endName)
+
     perf.measure(measureName, startName, endName)
-
-    var entry = perf.getEntriesByName(measureName)[0]
-    var duration = entry.duration.toFixed()
-    var msg = 'idle callback execution took ' + duration + 'ms'
-    if (duration >= 50) log.warn(msg)
-    else log.debug(msg)
-
     perf.clearMeasures(measureName)
     perf.clearMarks(startName)
     perf.clearMarks(endName)
