@@ -2,7 +2,7 @@
   "name": "on-idle",
   "description": "Detect when the browser is idle",
   "repository": "yoshuawuyts/on-idle",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra --no-dev",
     "start": "bankai start example.js",
