@@ -15,6 +15,6 @@ function onIdle (cb, opts) {
   if (hasIdle) {
     window.requestIdleCallback(cb, opts)
   } else if (hasWindow) {
-    window.requestAnimationFrame(cb)
+    setTimeout(cb, 0)
   }
 }
