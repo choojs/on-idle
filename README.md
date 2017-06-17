@@ -2,8 +2,7 @@
 [![npm version][2]][3] [![build status][4]][5]
 [![downloads][8]][9] [![js-standard-style][10]][11]
 
-Safely detect when the browser is idle. Does nothing when run in Node. Warns if
-an action takes more than 50ms.
+Safely detect when the browser is idle. Does nothing when run in Node.
 
 ![on idle console screenshot](./screenshot.png)
 
