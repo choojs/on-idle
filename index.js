@@ -8,13 +8,16 @@ module.exports = onIdle
 
 function onIdle (cb, opts) {
   opts = opts || dftOpts
+  var timerId
 
   assert.equal(typeof cb, 'function', 'on-idle: cb should be type function')
   assert.equal(typeof opts, 'object', 'on-idle: opts should be type object')
 
   if (hasIdle) {
-    window.requestIdleCallback(cb, opts)
+    timerId = window.requestIdleCallback(cb, opts)
+    return window.cancelIdleCallback.bind(window, timerId)
   } else if (hasWindow) {
-    setTimeout(cb, 0)
+    timerId = setTimeout(cb, 0)
+    return clearTimeout.bind(window, timerId)
   }
 }

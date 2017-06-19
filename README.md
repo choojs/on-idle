@@ -11,10 +11,14 @@ Safely detect when the browser is idle. Does nothing when run in Node.
 var onIdle = require('on-idle')
 var html = require('bel')
 
-onIdle(function () {
+var cancel = onIdle(function () {
   var el = html`<h1>browser is idle</h1>`
   document.body.appendChild(el)
 })
+
+if (somethingHappens) {
+  cancel()
+}
 ```
 
 ## API
