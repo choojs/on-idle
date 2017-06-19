@@ -2,7 +2,7 @@ var assert = require('assert')
 
 var dftOpts = {}
 var hasWindow = typeof window !== 'undefined'
-var hasIdle = hasWindow && window.requestIdleCallback
+var hasIdle = hasWindow && 'requestIdleCallback' in window
 
 module.exports = onIdle
 
