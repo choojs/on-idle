@@ -10,3 +10,9 @@ onIdle(function () {
 onIdle(function () {
   console.log('fast message')
 })
+
+var cancel = onIdle(function () {
+  console.log('this callback will be cancelled')
+})
+
+cancel()
