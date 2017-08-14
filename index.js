@@ -14,7 +14,10 @@ function onIdle (cb, opts) {
   assert.equal(typeof opts, 'object', 'on-idle: opts should be type object')
 
   if (hasIdle) {
-    timerId = window.requestIdleCallback(cb, opts)
+    timerId = window.requestIdleCallback(function (idleDeadline) {
+      if (idleDeadline.timeRemaining() === 0) return onIdle(cb, opts)
+      cb(idleDeadline)
+    }, opts)
     return window.cancelIdleCallback.bind(window, timerId)
   } else if (hasWindow) {
     timerId = setTimeout(cb, 0)
