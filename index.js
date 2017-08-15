@@ -15,8 +15,11 @@ function onIdle (cb, opts) {
 
   if (hasIdle) {
     timerId = window.requestIdleCallback(function (idleDeadline) {
-      if (idleDeadline.timeRemaining() === 0) return onIdle(cb, opts)
-      cb(idleDeadline)
+      if (idleDeadline.timeRemaining() <= 10 && !idleDeadline.didTimeout) {
+        return onIdle(cb, opts)
+      } else {
+        cb(idleDeadline)
+      }
     }, opts)
     return window.cancelIdleCallback.bind(window, timerId)
   } else if (hasWindow) {
