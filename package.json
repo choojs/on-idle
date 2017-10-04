@@ -4,7 +4,7 @@
   "repository": "choojs/on-idle",
   "version": "3.1.2",
   "scripts": {
-    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "deps": "dependency-check . && dependency-check . --extra --no-dev -i nanoassert",
     "start": "bankai start example.js",
     "test": "standard && npm run deps",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov"
