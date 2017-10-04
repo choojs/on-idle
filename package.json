@@ -9,7 +9,12 @@
     "test": "standard && npm run deps",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov"
   },
-  "dependencies": {},
+  "browser": {
+    "assert": "nanoassert"
+  },
+  "dependencies": {
+    "nanoassert": "^1.1.0"
+  },
   "devDependencies": {
     "bankai": "^7.6.2",
     "dependency-check": "^2.8.0",
