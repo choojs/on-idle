@@ -2,7 +2,7 @@
   "name": "on-idle",
   "description": "Detect when the browser is idle",
   "repository": "choojs/on-idle",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra --no-dev -i nanoassert",
     "start": "bankai start example.js",
