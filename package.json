@@ -1,15 +1,20 @@
 {
   "name": "on-idle",
   "description": "Detect when the browser is idle",
-  "repository": "yoshuawuyts/on-idle",
+  "repository": "choojs/on-idle",
   "version": "3.1.2",
   "scripts": {
-    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "deps": "dependency-check . && dependency-check . --extra --no-dev -i nanoassert",
     "start": "bankai start example.js",
     "test": "standard && npm run deps",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov"
   },
-  "dependencies": {},
+  "browser": {
+    "assert": "nanoassert"
+  },
+  "dependencies": {
+    "nanoassert": "^1.1.0"
+  },
   "devDependencies": {
     "bankai": "^7.6.2",
     "dependency-check": "^2.8.0",
