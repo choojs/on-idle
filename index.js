@@ -15,9 +15,9 @@ function onIdle (cb, opts) {
 
   if (hasIdle) {
     timerId = window.requestIdleCallback(function (idleDeadline) {
-      // reschedule if there's less than 10ms remaining on the tick
+      // reschedule if there's less than 1ms remaining on the tick
       // and a timer did not expire
-      if (idleDeadline.timeRemaining() <= 10 && !idleDeadline.didTimeout) {
+      if (idleDeadline.timeRemaining() <= 1 && !idleDeadline.didTimeout) {
         return onIdle(cb, opts)
       } else {
         cb(idleDeadline)
